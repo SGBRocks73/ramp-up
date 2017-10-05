@@ -1,27 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ramp PlacerVC-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <viewController id="BV1-FR-VrT" customClass="RampPlacerVC" customModule="ramp_up" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h1N-i4-3yk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="for-pF-cGT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1Q-0t-fPZ">
+                                <rect key="frame" x="252" y="580" width="107" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="J2X-bG-whp"/>
+                                    <constraint firstAttribute="width" constant="107" id="Up7-rP-rdD"/>
+                                </constraints>
+                                <state key="normal" image="rampIcon"/>
+                                <connections>
+                                    <action selector="rampButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="PcC-kW-qf3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="for-pF-cGT" firstAttribute="top" secondItem="QFu-X3-m33" secondAttribute="top" id="2ix-Af-eI2"/>
+                            <constraint firstItem="QFu-X3-m33" firstAttribute="bottom" secondItem="d1Q-0t-fPZ" secondAttribute="bottom" constant="16" id="5Ga-P1-cEd"/>
+                            <constraint firstItem="QFu-X3-m33" firstAttribute="bottom" secondItem="for-pF-cGT" secondAttribute="bottom" id="K8e-d7-qfB"/>
+                            <constraint firstItem="QFu-X3-m33" firstAttribute="trailing" secondItem="d1Q-0t-fPZ" secondAttribute="trailing" constant="16" id="b9y-8C-nn7"/>
+                            <constraint firstItem="for-pF-cGT" firstAttribute="leading" secondItem="QFu-X3-m33" secondAttribute="leading" id="cmb-WJ-XBq"/>
+                            <constraint firstItem="QFu-X3-m33" firstAttribute="trailing" secondItem="for-pF-cGT" secondAttribute="trailing" id="hgg-oc-YET"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QFu-X3-m33"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="sceneView" destination="for-pF-cGT" id="tER-1U-TlW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="rampIcon" width="107" height="71"/>
+    </resources>
 </document>
